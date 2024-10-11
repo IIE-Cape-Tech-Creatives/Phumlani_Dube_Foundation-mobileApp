@@ -8,6 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name ="grey">#808080 </color>
-    <color name="forest_green">#228B22</color> <!-- Forest Green -->
-    <color name="peacock_blue">#00688B</color> <!-- Peacock Blue -->
+    <color name="forest_green">#228B22</color>
+    <color name="peacock_blue">#00688B</color>
 </resources>

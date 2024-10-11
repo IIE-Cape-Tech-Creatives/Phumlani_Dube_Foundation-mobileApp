@@ -1,6 +1,7 @@
 plugins {
 	alias(libs.plugins.androidApplication)
 	alias(libs.plugins.jetbrainsKotlinAndroid)
+	id("com.google.gms.google-services")
 	
 	
 }
@@ -51,6 +52,10 @@ dependencies {
 	implementation(libs.androidx.navigation.ui.ktx)
 	implementation(libs.androidx.activity)
 	implementation(libs.androidx.preference)
+	implementation(libs.firebase.auth)
+	implementation(libs.firebase.analytics)
+	implementation(libs.firebase.database)
+	implementation(libs.androidx.cardview)
 	testImplementation(libs.junit)
 	androidTestImplementation(libs.androidx.junit)
 	androidTestImplementation(libs.androidx.espresso.core)
