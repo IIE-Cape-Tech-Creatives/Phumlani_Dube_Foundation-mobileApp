@@ -59,7 +59,11 @@ class Register : AppCompatActivity() {
 			}
 		}
 		
-		
+		binding.loginButton.setOnClickListener(){
+			val intent = Intent(this, Login::class.java)
+			//when the user clicks, they are sent to login screen
+			startActivity(intent)
+		}
 
 		ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
 			val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
