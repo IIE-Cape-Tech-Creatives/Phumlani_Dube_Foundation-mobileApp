@@ -1,7 +1,8 @@
-package com.example.phumlanidubefoundationmobileapplication
+package com.example.phumlanidubefoundationmobileapplication.ui.settings
 
 import android.os.Bundle
 import androidx.preference.PreferenceFragmentCompat
+import com.example.phumlanidubefoundationmobileapplication.R
 
 class SettingsFragment : PreferenceFragmentCompat() {
 	
