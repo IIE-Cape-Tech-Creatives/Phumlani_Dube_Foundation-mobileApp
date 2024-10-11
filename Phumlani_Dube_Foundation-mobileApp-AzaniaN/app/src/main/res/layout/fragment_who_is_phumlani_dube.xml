@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:id="@+id/image_phumlani_dube_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/your_logo_here"
+        android:contentDescription="@string/phumlani_dube_logo" />
+
+    <TextView
+        android:id="@+id/text_who_is_phumlani_dube_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Who is Phumlani Dube?"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/text_phumlani_dube_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Details about Phumlani Dube go here..."
+        android:textSize="16sp"
+        android:layout_marginTop="16dp" />
+</LinearLayout>

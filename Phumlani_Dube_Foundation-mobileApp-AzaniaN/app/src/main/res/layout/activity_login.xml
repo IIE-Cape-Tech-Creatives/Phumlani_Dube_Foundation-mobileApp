@@ -1,0 +1,132 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login">
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/logo2_iv"
+                android:layout_width="match_parent"
+                android:layout_height="236dp"
+                tools:srcCompat="@drawable/img"  />
+
+            <TextView
+                android:id="@+id/Login_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/login"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textAlignment="center"
+                android:padding="16dp"
+                android:background="@drawable/edittext_background"/>
+
+            <!-- Email/Phone Field -->
+            <TextView
+                android:id="@+id/emailPhoneLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/email_phone"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:paddingTop="8dp" />
+
+            <EditText
+                android:id="@+id/emailPhoneInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_your_email_or_phone_number"
+                android:textColorHint="@color/grey"
+                android:textColor="@color/black"
+                android:inputType="text"
+                android:padding="12dp"
+                android:background="@drawable/edittext_background"/>
+
+            <!-- Password Field -->
+            <TextView
+                android:id="@+id/passwordLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/password"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:paddingTop="8dp" />
+
+            <EditText
+                android:id="@+id/passwordInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_your_password"
+                android:textColorHint="@color/grey"
+                android:textColor="@color/black"
+                android:inputType="text"
+                android:padding="12dp"
+                />
+
+            <!-- Login Button -->
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/login"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="@color/forest_green"
+                android:padding="16dp" />
+
+            <!-- Forgot Password Button -->
+            <Button
+                android:id="@+id/forgotPasswordButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text= "@string/forgot_your_password"
+                android:textColor="@color/peacock_blue"
+                android:backgroundTint="@android:color/transparent"
+                android:padding="12dp"
+                android:layout_gravity="center" />
+            <!-- Button to send verification code -->
+            <Button
+                android:id="@+id/sendCodeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send Verification Code to Phone number to reset password"
+                android:textColor="@color/peacock_blue"
+                android:backgroundTint="@android:color/transparent"
+                android:padding="12dp"
+                android:layout_gravity="center"/>
+
+
+            <!-- Register Button -->
+            <Button
+                android:id="@+id/registerButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/don_t_have_an_account_register"
+                android:textColor="@color/peacock_blue"
+                android:backgroundTint="@android:color/transparent"
+                android:padding="12dp"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

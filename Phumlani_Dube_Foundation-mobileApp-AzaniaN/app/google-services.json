@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "395040933744",
+    "project_id": "phumlani-dube-foundation-app",
+    "storage_bucket": "phumlani-dube-foundation-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:395040933744:android:df8970c4051551f2e6f1b5",
+        "android_client_info": {
+          "package_name": "com.example.phumlanidubefoundationmobileapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLhoSDtrb94G9ptc5Uk3PEVDsv_-m09GU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
