@@ -13,63 +13,65 @@ import android.content.Intent
 class Register : AppCompatActivity() {
 	private lateinit var firebaseAuth: FirebaseAuth
 	private lateinit var binding: ActivityRegisterBinding
+	
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
+		
+		// Enable edge-to-edge mode for immersive UI
 		enableEdgeToEdge()
-		setContentView(R.layout.activity_register)
 		
+		// Inflate the layout using ViewBinding
 		binding = ActivityRegisterBinding.inflate(layoutInflater)
-		
-		
 		setContentView(binding.root)
 		
+		// Initialize Firebase authentication instance
 		firebaseAuth = FirebaseAuth.getInstance()
-		binding.registerButton.setOnClickListener(){
-			/*
-			the input textboxes for user to register their names passwords
-			 */
-			val username = binding.usernameInput.text.toString()
-			val password = binding.passwordInput.text.toString()
-			val email = binding.emailPhoneInput.text.toString()
-			val confirmPassword = binding.confirmPasswordInput.text.toString()
+		
+		// Handle Register button click
+		binding.registerButton.setOnClickListener {
+			// Retrieve user input from text fields
+			val username = binding.usernameInput.text.toString().trim()
+			val email = binding.emailPhoneInput.text.toString().trim()
+			val password = binding.passwordInput.text.toString().trim()
+			val confirmPassword = binding.confirmPasswordInput.text.toString().trim()
 			
-			if (username.isNotEmpty()&&email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
+			// Validate the input fields
+			if (username.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
 				if (password == confirmPassword) {
-					
+					// Create a new user with email and password
 					firebaseAuth.createUserWithEmailAndPassword(email, password)
-						.addOnCompleteListener {
-							if (it.isSuccessful) {
+						.addOnCompleteListener { task ->
+							if (task.isSuccessful) {
+								// Redirect to MainActivity or another screen after successful registration
 								val intent = Intent(this, MainActivity::class.java)
-								//for now its main activity but real life its newsletter and updates screen
-								//above: if the registration is a success, then they transffered to about/updates screen
 								startActivity(intent)
+								finish() // Optional: finish the Register activity so user can't go back
 							} else {
-								Toast.makeText(
-									this,
-									it.exception.toString(),
-									Toast.LENGTH_SHORT
-								).show()
+								// Show error message
+								Toast.makeText(this, task.exception?.message ?: "Registration failed", Toast.LENGTH_SHORT).show()
 							}
 						}
 				} else {
-					Toast.makeText(this, "The Password is not matching. Please check your password or try again", Toast.LENGTH_SHORT).show()
+					// Passwords do not match
+					Toast.makeText(this, "Passwords do not match. Please try again.", Toast.LENGTH_SHORT).show()
 				}
 			} else {
-				Toast.makeText(this, "Something is wrong. It seems you did not type in anything. Please check if you typed everything", Toast.LENGTH_SHORT).show()
+				// One or more fields are empty
+				Toast.makeText(this, "Please fill out all fields.", Toast.LENGTH_SHORT).show()
 			}
 		}
 		
-		binding.loginButton.setOnClickListener(){
-			val intent = Intent(this, Login::class.java)
-			//when the user clicks, they are sent to login screen
-			startActivity(intent)
+		// Handle Login button click to navigate to the Login screen
+		binding.loginButton.setOnClickListener {
+			val intentLogin = Intent(this, Login::class.java)
+			startActivity(intentLogin)
 		}
-
+		
+		// Adjust window insets for immersive layout (handling system bars padding)
 		ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
 			val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
 			v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
 			insets
 		}
-		
 	}
 }
