@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.newsletter.Newsletter">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#262626">
+
+        <!-- ScrollView for all content -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Horizontal ScrollView for the buttons -->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp">
+
+                    <LinearLayout
+                        android:id="@+id/horizontalTextContainer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Layout for August Highlights Button -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="16dp"> <!-- Space between buttons -->
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="| August Highlights |"
+                                android:textSize="16sp"
+                                android:gravity="center"
+                                android:padding="8dp"
+                                android:textAlignment="center"
+                                android:backgroundTint="#72B944"
+                                android:textColor="#000000" />
+
+                            <!-- Replace dots with bullet points -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Youth Mentorship"
+                                android:textSize="14sp"
+                                android:gravity="center"
+                                android:layout_marginTop="4dp"
+                                android:textColor="#FFFFFF"/> <!-- Black -->
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Community Clean-Up"
+                                android:textSize="14sp"
+                                android:gravity="center"
+                                android:layout_marginTop="4dp"
+                                android:textColor="#FFFFFF"/> <!-- Black -->
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Future Projects"
+                                android:textSize="14sp"
+                                android:gravity="center"
+                                android:layout_marginTop="4dp"
+                                android:textColor="#FFFFFF"/> <!-- Black -->
+                        </LinearLayout>
+
+                        <!-- Layout for September Highlights Button -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="16dp"> <!-- Space between buttons -->
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="| September Highlights |"
+                                android:textSize="16sp"
+                                android:gravity="center"
+                                android:padding="8dp"
+                                android:textAlignment="center"
+                                android:backgroundTint="#72B944"
+                                android:textColor="#000000"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="New Partnerships"
+                                android:textSize="14sp"
+                                android:gravity="center"
+                                android:layout_marginTop="4dp"
+                                android:textColor="#FFFFFF"/> <!-- Black -->
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Successful Events"
+                                android:textSize="14sp"
+                                android:gravity="center"
+                                android:layout_marginTop="4dp"
+                                android:textColor="#FFFFFF"/> <!-- Black -->
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Upcoming Projects"
+                                android:textSize="14sp"
+                                android:gravity="center"
+                                android:layout_marginTop="4dp"
+                                android:textColor="#FFFFFF"/> <!-- Black -->
+                        </LinearLayout>
+
+                        <!-- Layout for October Highlights Button -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="| October Highlights |"
+                                android:textSize="16sp"
+                                android:gravity="center"
+                                android:padding="8dp"
+                                android:textAlignment="center"
+                                android:backgroundTint="#72B944"
+                                android:textColor="#000000"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Volunteer Opportunities"
+                                android:textSize="14sp"
+                                android:gravity="center"
+                                android:layout_marginTop="4dp"
+                                android:textColor="#FFFFFF"/> <!-- Black -->
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Community Clean-Up"
+                                android:textSize="14sp"
+                                android:gravity="center"
+                                android:layout_marginTop="4dp"
+                                android:textColor="#FFFFFF"/> <!-- Black -->
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Future Projects"
+                                android:textSize="14sp"
+                                android:gravity="center"
+                                android:layout_marginTop="4dp"
+                                android:textColor="#FFFFFF"/> <!-- Black -->
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <!-- Download Button -->
+                <Button
+                    android:id="@+id/downloadButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Download"
+                    android:layout_gravity="center_horizontal"
+                    android:backgroundTint="#72B944"
+                    android:textColor="#000000"/>
+
+                <!-- Updates Section -->
+                <TextView
+                    android:id="@+id/updatesTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Upcoming Events"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:paddingBottom="8dp"
+                    android:layout_marginTop="16dp"
+                    android:textColor="#72B944"/> <!-- Black -->
+
+                <!-- Example of an Event Tile -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/boarder_rectangle">
+
+                    <TextView
+                        android:id="@+id/eventDate1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Oct 20, 2024"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/eventDescription1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fundraiser"
+                        android:textSize="16sp"
+                        android:gravity="end"
+                        android:textColor="#000000"/> <!-- Black -->
+                </LinearLayout>
+
+                <!-- Additional event tiles can be added similarly -->
+
+                <!-- Insights Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="@drawable/boarder_rectangle">
+
+                    <TextView
+                        android:id="@+id/insightsTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Learn More About Phumulani Dude Foundation"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"
+                        android:textColor="#000000"/> <!-- Black -->
+
+                    <Button
+                        android:id="@+id/learnMoreButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Learn More"
+                        android:layout_gravity="center_horizontal"
+                        android:backgroundTint="#72B944"
+                        android:textColor="#000000"/>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

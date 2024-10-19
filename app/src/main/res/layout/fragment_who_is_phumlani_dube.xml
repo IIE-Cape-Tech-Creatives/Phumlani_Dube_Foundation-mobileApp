@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="93dp"
+                    android:background="#72B944"
+                    android:backgroundTint="#72B944"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/text_who_is_phumlani_dube_title"
+                        android:layout_width="341dp"
+                        android:layout_height="54dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="16dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center"
+                        android:text="Who is Phumlani Dube?"
+                        android:textColor="#262626"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/text_phumlani_dube_details1"
+                    android:layout_width="335dp"
+                    android:layout_height="98dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="#E6FFC9"
+                    android:text="Details about Phumlani Dube go here..."
+                    android:textColor="#262626"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/image_phumlani_dube_who1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/phumlani_dube_description"
+                    android:src="@drawable/pdi2" />
+
+                <TextView
+                    android:id="@+id/text_phumlani_dube_details2"
+                    android:layout_width="335dp"
+                    android:layout_height="122dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="#E6FFC9"
+                    android:text="More Details about Phumlani Dube go here..."
+                    android:textColor="#262626"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/image_phumlani_dube_who2"
+                    android:layout_width="match_parent"
+                    android:layout_height="91dp"
+                    android:layout_gravity="bottom"
+                    android:contentDescription="@string/phumlani_dube_description"
+                    android:src="@drawable/pdi1" />
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
