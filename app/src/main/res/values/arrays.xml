@@ -3,4 +3,18 @@
         <item>English</item>
         <item> IsiZulu</item>
     </string-array>
+
+    <!-- Font size options visible to users -->
+    <string-array name="font_size_entries">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+    </string-array>
+
+    <!-- Corresponding font size values in sp -->
+    <string-array name="font_size_values">
+        <item>12</item> <!-- Small -->
+        <item>14</item> <!-- Medium (default) -->
+        <item>18</item> <!-- Large -->
+    </string-array>
 </resources>

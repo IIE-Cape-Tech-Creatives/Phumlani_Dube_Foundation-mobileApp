@@ -4,12 +4,14 @@
 
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/peacock_blue</item> <!-- Peacock Blue -->
-        <item name="colorPrimaryVariant">@color/darker_peacock_blue</item> <!-- Darker Peacock Blue -->
+        <item name="colorPrimaryVariant">@color/darker_peacock_blue
+        </item> <!-- Darker Peacock Blue -->
         <item name="colorOnPrimary">@color/white</item> <!-- White -->
 
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/forest_green</item> <!-- Forest Green -->
-        <item name="colorSecondaryVariant">@color/darker_forest_green</item> <!-- Darker Forest Green -->
+        <item name="colorSecondaryVariant">@color/darker_forest_green
+        </item> <!-- Darker Forest Green -->
         <item name="colorOnSecondary">@color/white</item> <!-- White -->
 
         <!-- Status bar color. -->
@@ -26,4 +28,9 @@
     <style name="Theme.PhumlaniDubeFoundationMobileApplication.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.PhumlaniDubeFoundationMobileApplication.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PhumlaniDubeFoundationMobileApplication" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
 </resources>
