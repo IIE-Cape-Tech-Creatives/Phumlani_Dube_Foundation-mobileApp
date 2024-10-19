@@ -10,4 +10,6 @@
     <color name ="grey">#808080 </color>
     <color name="forest_green">#228B22</color>
     <color name="peacock_blue">#00688B</color>
+    <color name="darker_peacock_blue">#004A5F</color>
+    <color name="darker_forest_green">#196619</color>
 </resources>

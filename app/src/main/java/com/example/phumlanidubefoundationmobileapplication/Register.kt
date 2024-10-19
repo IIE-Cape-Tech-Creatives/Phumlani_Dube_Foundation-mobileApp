@@ -1,13 +1,18 @@
 package com.example.phumlanidubefoundationmobileapplication
 
+import android.R
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import android.content.Intent
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.example.phumlanidubefoundationmobileapplication.databinding.ActivityRegisterBinding
-import com.google.firebase.auth.FirebaseAuth
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.phumlanidubefoundationmobileapplication.databinding.ActivityRegisterBinding
+import com.example.phumlanidubefoundationmobileapplication.ui.whoIsPhumlaniDube.WhoIsPhumlaniDubeFragment
+import com.google.firebase.auth.FirebaseAuth
+import android.widget.Toolbar
+
 
 class Register : AppCompatActivity() {
 
@@ -16,6 +21,9 @@ class Register : AppCompatActivity() {
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
+
+//		val toolbar: Toolbar = findViewById(R.id.toolbar)
+//		setSupportActionBar(toolbar)
 
 		// Enable edge-to-edge mode for immersive UI
 		enableEdgeToEdge()
@@ -39,9 +47,9 @@ class Register : AppCompatActivity() {
 					firebaseAuth.createUserWithEmailAndPassword(email, password)
 						.addOnCompleteListener { task ->
 							if (task.isSuccessful) {
-								val intent = Intent(this, MainActivity::class.java)
+								val intent = Intent(this, WhoIsPhumlaniDubeFragment ::class.java)
 								startActivity(intent)
-								finish() // Optional: finish the Register activity so the user can't go back
+								//finish() // Optional: finish the Register activity so the user can't go back
 							} else {
 								Toast.makeText(this, task.exception?.message ?: "Registration failed", Toast.LENGTH_SHORT).show()
 							}
@@ -60,11 +68,11 @@ class Register : AppCompatActivity() {
 			startActivity(intentLogin)
 		}
 
-		// Adjust window insets for immersive layout (handling system bars padding)
-		ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-			val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-			v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-			insets
+//		// Adjust window insets for immersive layout (handling system bars padding)
+//		ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.mai)) { v, insets ->
+//			val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+//			v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+//			insets
 		}
 	}
-}
+//}

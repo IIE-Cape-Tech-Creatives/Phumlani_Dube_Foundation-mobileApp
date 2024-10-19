@@ -11,6 +11,7 @@ import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.FirebaseException
 import java.util.concurrent.TimeUnit
+import com.example.phumlanidubefoundationmobileapplication.ui.whoIsPhumlaniDube.WhoIsPhumlaniDubeFragment
 
 class Login : AppCompatActivity() {
 
@@ -72,9 +73,9 @@ class Login : AppCompatActivity() {
 			.addOnCompleteListener(this) { task ->
 				if (task.isSuccessful) {
 					// Login successful, navigate to MainActivity (or another activity)
-					val intent = Intent(this, MainActivity::class.java)
+					val intent = Intent(this, WhoIsPhumlaniDubeFragment::class.java)
 					startActivity(intent)
-					finish() // Close the login activity so that the user can't go back to it with the back button
+					//finish() // Close the login activity so that the user can't go back to it with the back button
 				} else {
 					// If sign-in fails, display a message to the user
 					Toast.makeText(
