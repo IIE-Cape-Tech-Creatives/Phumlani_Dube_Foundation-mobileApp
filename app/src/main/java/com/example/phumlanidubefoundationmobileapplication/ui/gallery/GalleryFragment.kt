@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.phumlanidubefoundationmobileapplication.databinding.FragmentGalleryBinding
+import com.example.phumlanidubefoundationmobileapplication.BaseActivity
 
 class GalleryFragment : Fragment() {
 	
@@ -24,7 +25,10 @@ class GalleryFragment : Fragment() {
 	): View {
 		val galleryViewModel =
 			ViewModelProvider(this).get(GalleryViewModel::class.java)
-		
+		// Access BaseActivity and apply font size changes if needed
+		val baseActivity = activity as? BaseActivity
+		baseActivity?.applyFontSize()  // Call the font size method from BaseActivity
+
 		_binding = FragmentGalleryBinding.inflate(inflater, container, false)
 		val root: View = binding.root
 		

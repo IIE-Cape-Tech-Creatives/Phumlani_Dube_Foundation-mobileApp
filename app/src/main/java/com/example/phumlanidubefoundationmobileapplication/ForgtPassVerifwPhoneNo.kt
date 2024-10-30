@@ -17,6 +17,7 @@ import com.google.firebase.FirebaseException
 import java.util.concurrent.TimeUnit
 
 
+
 class ForgtPassVerifwPhoneNo : Fragment() {
 	
 	private lateinit var verifyCodeBtn: Button
@@ -31,7 +32,11 @@ class ForgtPassVerifwPhoneNo : Fragment() {
 		savedInstanceState: Bundle?
 	): View? {
 		val view = inflater.inflate(R.layout.fragment_forgt_pass_verifw_phone_no, container, false)
-		
+
+		// Access BaseActivity and apply font size changes if needed
+		val baseActivity = activity as? BaseActivity
+		baseActivity?.applyFontSize()  // Call the font size method from BaseActivity
+
 		// Initialize FirebaseAuth
 		firebaseAuth = FirebaseAuth.getInstance()
 		

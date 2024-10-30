@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/themeSwi"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
@@ -39,12 +40,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- Account Settings Card -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    app:cardElevation="6dp">
+                    android:backgroundTint="#65AC68"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -56,8 +58,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="10dp"
+                            android:fontFamily="monospace"
                             android:text="Account Settings"
-                            android:textSize="20sp"
+                            android:textColor="@color/design_default_color_on_secondary"
+                            android:textSize="24sp"
                             android:textStyle="bold" />
 
                         <!-- Change Username or Email -->
@@ -71,14 +75,15 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:background="@null"
-                                android:src="@drawable/baseline_alternate_email_24"
-                                android:scaleType="centerInside" /> <!-- Add your own icon -->
+                                android:scaleType="centerInside"
+                                android:src="@drawable/baseline_alternate_email_24" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingStart="10dp"
                                 android:text="Change Username/Email"
+                                android:textColor="@color/white"
                                 android:textSize="18sp" />
                         </LinearLayout>
 
@@ -90,17 +95,19 @@
                             android:padding="10dp">
 
                             <ImageButton
+                                android:id="@+id/changePasswordBtn"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:background="@null"
-                                android:src="@drawable/password"
-                                android:scaleType="centerInside" />
+                                android:scaleType="centerInside"
+                                android:src="@drawable/password" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingStart="10dp"
                                 android:text="Change Password"
+                                android:textColor="@color/white"
                                 android:textSize="18sp" />
                         </LinearLayout>
 
@@ -112,7 +119,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    app:cardElevation="6dp">
+                    android:backgroundTint="#65AC68"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -124,8 +133,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="10dp"
+                            android:fontFamily="monospace"
                             android:text="Display Settings"
-                            android:textSize="20sp"
+                            android:textColor="@color/black"
+                            android:textSize="24sp"
                             android:textStyle="bold" />
 
                         <!-- Font Size and Style Adjustments -->
@@ -139,15 +150,24 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:background="@null"
-                                android:src="@drawable/fontsize"
-                                android:scaleType="centerInside" /> <!-- Add your own icon -->
+                                android:scaleType="centerInside"
+                                android:src="@drawable/fontsize" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingStart="10dp"
                                 android:text="Font Size and Style"
+                                android:textColor="@color/white"
                                 android:textSize="18sp" />
+
+                            <SeekBar
+                                android:id="@+id/fontSizeSeekBar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:max="30"
+                                android:min="12"
+                                android:progressTint="#050505" />
                         </LinearLayout>
 
                         <!-- High Contrast Mode -->
@@ -161,15 +181,23 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:background="@null"
-                                android:src="@drawable/contrast"
-                                android:scaleType="centerInside" />
+                                android:scaleType="centerInside"
+                                android:src="@drawable/contrast" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingStart="10dp"
-                                android:text="High Contrast Mode"
+                                android:text="Switch to Dark Mode"
+                                android:textColor="@color/white"
                                 android:textSize="18sp" />
+
+                            <Switch
+                                android:id="@+id/themeSwitch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
                         </LinearLayout>
 
                     </LinearLayout>
@@ -180,7 +208,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    app:cardElevation="6dp">
+                    android:backgroundTint="#65AC68"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -192,8 +222,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="10dp"
+                            android:fontFamily="monospace"
                             android:text="Language Settings"
-                            android:textSize="20sp"
+                            android:textColor="@color/black"
+                            android:textSize="24sp"
                             android:textStyle="bold" />
 
                         <!-- Language Translator Option -->
@@ -207,14 +239,15 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:background="@null"
-                                android:src="@drawable/translation"
-                                android:scaleType="centerInside" />
+                                android:scaleType="centerInside"
+                                android:src="@drawable/translation" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingStart="10dp"
                                 android:text="Select Language"
+                                android:textColor="@color/white"
                                 android:textSize="18sp" />
                         </LinearLayout>
 
@@ -223,6 +256,7 @@
                             android:id="@+id/languageSpinner"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_background"
                             android:entries="@array/languages_array" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -232,6 +266,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
+                    android:backgroundTint="#65AC68"
+                    app:cardCornerRadius="8dp"
                     app:cardElevation="6dp">
 
                     <LinearLayout
@@ -244,8 +280,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="10dp"
+                            android:fontFamily="monospace"
                             android:text="Notification Settings"
-                            android:textSize="20sp"
+                            android:textColor="@color/black"
+                            android:textSize="24sp"
                             android:textStyle="bold" />
 
                         <!-- Notification Customization -->
@@ -259,14 +297,15 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:background="@null"
-                                android:src="@drawable/notifications"
-                                android:scaleType="centerInside" />
+                                android:scaleType="centerInside"
+                                android:src="@drawable/notifications" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingStart="10dp"
                                 android:text="Notification Customization"
+                                android:textColor="@color/white"
                                 android:textSize="18sp" />
                         </LinearLayout>
 

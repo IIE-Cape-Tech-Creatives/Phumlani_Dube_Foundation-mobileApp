@@ -36,7 +36,7 @@
                         android:id="@+id/logo_iv"
                         android:layout_width="match_parent"
                         android:layout_height="236dp"
-                        android:src="@drawable/img" />
+                        android:src="@drawable/pdflogo" />
 
                     <TextView
                         android:id="@+id/Join_us_tv"

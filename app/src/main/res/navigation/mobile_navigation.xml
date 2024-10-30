@@ -6,6 +6,18 @@
     app:startDestination="@+id/nav_home">
 
     <fragment
+        android:id="@+id/nav_whoIsPhumlaniDube"
+        android:name="com.example.phumlanidubefoundationmobileapplication.ui.whoIsPhumlaniDube.WhoIsPhumlaniDubeFragment"
+        android:label="@string/menu_whoIsPhumlaniDube"
+        tools:layout="@layout/fragment_who_is_phumlani_dube" />
+
+    <fragment
+        android:id="@+id/nav_Newsletter"
+        android:name="com.example.phumlanidubefoundationmobileapplication.ui.newsletter.NewsletterFragment"
+        android:label="Newsletter"
+        tools:layout="@layout/fragment_newsletter" />
+
+    <fragment
         android:id="@+id/nav_home"
         android:name="com.example.phumlanidubefoundationmobileapplication.ui.home.HomeFragment"
         android:label="@string/menu_home"
@@ -28,10 +40,5 @@
         android:label="@string/action_settings"
         tools:layout="@layout/fragment_settings"
         />
-    <fragment
-        android:id="@+id/nav_whoIsPhumlaniDube"
-        android:name="com.example.phumlanidubefoundationmobileapplication.ui.whoIsPhumlaniDube.WhoIsPhumlaniDubeFragment"
-        android:label="@string/menu_whoIsPhumlaniDube"
-        tools:layout="@layout/fragment_who_is_phumlani_dube" />
 
 </navigation>

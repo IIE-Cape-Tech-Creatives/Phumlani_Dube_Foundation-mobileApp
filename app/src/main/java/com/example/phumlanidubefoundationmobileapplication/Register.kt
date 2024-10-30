@@ -12,9 +12,10 @@ import com.example.phumlanidubefoundationmobileapplication.databinding.ActivityR
 import com.example.phumlanidubefoundationmobileapplication.ui.whoIsPhumlaniDube.WhoIsPhumlaniDubeFragment
 import com.google.firebase.auth.FirebaseAuth
 import android.widget.Toolbar
+import com.example.phumlanidubefoundationmobileapplication.ui.settings.SettingsFragment
 
 
-class Register : AppCompatActivity() {
+class Register : BaseActivity() {
 
 	private lateinit var firebaseAuth: FirebaseAuth
 	private lateinit var binding: ActivityRegisterBinding
@@ -67,6 +68,7 @@ class Register : AppCompatActivity() {
 			val intentLogin = Intent(this, Login::class.java)
 			startActivity(intentLogin)
 		}
+
 
 //		// Adjust window insets for immersive layout (handling system bars padding)
 //		ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.mai)) { v, insets ->

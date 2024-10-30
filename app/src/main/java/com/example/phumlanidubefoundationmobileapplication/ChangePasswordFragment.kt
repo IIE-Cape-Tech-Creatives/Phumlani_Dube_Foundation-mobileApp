@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth
 import android.content.Intent
 import com.example.phumlanidubefoundationmobileapplication.Login
 
+
 class ChangePasswordFragment : Fragment() {
 	private lateinit var newPasswordEditText: EditText
 	private lateinit var changePasswordBtn: Button
@@ -21,7 +22,11 @@ class ChangePasswordFragment : Fragment() {
 		savedInstanceState: Bundle?
 	): View? {
 		val view = inflater.inflate(R.layout.fragment_change_password, container, false)
-		
+
+		// Access BaseActivity and apply font size changes if needed
+		val baseActivity = activity as? BaseActivity
+		baseActivity?.applyFontSize()  // Call the font size method from BaseActivity
+
 		newPasswordEditText = view.findViewById(R.id.newPasswordEditText)
 		changePasswordBtn = view.findViewById(R.id.changePasswordBtn)
 		
@@ -37,16 +42,13 @@ class ChangePasswordFragment : Fragment() {
 		return view
 	}
 	
-	private fun changePassword(newPassword: String) {
-		val user = FirebaseAuth.getInstance().currentUser
-		user?.updatePassword(newPassword)
-			?.addOnCompleteListener { task ->
+	private fun changePassword(email: String) {
+		firebaseAuth.sendPasswordResetEmail(email)
+			.addOnCompleteListener { task ->
 				if (task.isSuccessful) {
-					Toast.makeText(requireContext(), "Password changed successfully!", Toast.LENGTH_SHORT).show()
-					navigateToLoginActivity()
+					Toast.makeText(requireContext(), "Password reset link sent to your email.", Toast.LENGTH_SHORT).show()
 				} else {
-					Toast.makeText(requireContext(), "Failed to change password. Please try again with a real phone number", Toast.LENGTH_SHORT).show()
-					navigateToLoginActivity()
+					Toast.makeText(requireContext(), "Error Please use the email you created your password with: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
 				}
 			}
 	}
