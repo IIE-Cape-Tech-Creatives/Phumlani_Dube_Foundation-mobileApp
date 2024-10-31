@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.ui.PlayerView
 
-class MainActivity : AppCompatActivity() {
+class MainNewsActivity : AppCompatActivity() {
 
     private val viewModel: NewsletterViewModel by viewModels()
     private lateinit var playerView: PlayerView

@@ -76,7 +76,7 @@ class Login : BaseActivity() {
 		firebaseAuth.signInWithEmailAndPassword(email, password)
 			.addOnCompleteListener(this) { task ->
 				if (task.isSuccessful) {
-					// Login successful, navigate to MainActivity (or another activity)
+					// Login successful, navigate to MainNewsActivity (or another activity)
 					val intent = Intent(this, SettingsActivity::class.java)
 					startActivity(intent)
 					finish() // Close the login activity so that the user can't go back to it with the back button
