@@ -13,6 +13,14 @@
         android:orientation="vertical"
         android:padding="16dp"
         android:background="#262626">
+        <!-- PlayerView for Media Playback -->
+        <androidx.media3.ui.PlayerView
+            android:id="@+id/player_view"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            app:use_controller="true"
+            app:show_timeout="5000" />
 
         <!-- ScrollView for all content -->
         <ScrollView
@@ -36,12 +44,12 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <!-- Layout for August Highlights Button -->
+                        <!-- August Highlights Button and texts -->
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:layout_marginEnd="16dp"> <!-- Space between buttons -->
+                            android:layout_marginEnd="16dp">
 
                             <Button
                                 android:layout_width="wrap_content"
@@ -54,7 +62,6 @@
                                 android:backgroundTint="#72B944"
                                 android:textColor="#000000" />
 
-                            <!-- Replace dots with bullet points -->
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -62,7 +69,7 @@
                                 android:textSize="14sp"
                                 android:gravity="center"
                                 android:layout_marginTop="4dp"
-                                android:textColor="#FFFFFF"/> <!-- Black -->
+                                android:textColor="#FFFFFF"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -71,7 +78,7 @@
                                 android:textSize="14sp"
                                 android:gravity="center"
                                 android:layout_marginTop="4dp"
-                                android:textColor="#FFFFFF"/> <!-- Black -->
+                                android:textColor="#FFFFFF"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -80,15 +87,15 @@
                                 android:textSize="14sp"
                                 android:gravity="center"
                                 android:layout_marginTop="4dp"
-                                android:textColor="#FFFFFF"/> <!-- Black -->
+                                android:textColor="#FFFFFF"/>
                         </LinearLayout>
 
-                        <!-- Layout for September Highlights Button -->
+                        <!-- September Highlights Button and texts -->
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:layout_marginEnd="16dp"> <!-- Space between buttons -->
+                            android:layout_marginEnd="16dp">
 
                             <Button
                                 android:layout_width="wrap_content"
@@ -108,7 +115,7 @@
                                 android:textSize="14sp"
                                 android:gravity="center"
                                 android:layout_marginTop="4dp"
-                                android:textColor="#FFFFFF"/> <!-- Black -->
+                                android:textColor="#FFFFFF"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -117,7 +124,7 @@
                                 android:textSize="14sp"
                                 android:gravity="center"
                                 android:layout_marginTop="4dp"
-                                android:textColor="#FFFFFF"/> <!-- Black -->
+                                android:textColor="#FFFFFF"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -126,10 +133,10 @@
                                 android:textSize="14sp"
                                 android:gravity="center"
                                 android:layout_marginTop="4dp"
-                                android:textColor="#FFFFFF"/> <!-- Black -->
+                                android:textColor="#FFFFFF"/>
                         </LinearLayout>
 
-                        <!-- Layout for October Highlights Button -->
+                        <!-- October Highlights Button and texts -->
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -153,7 +160,7 @@
                                 android:textSize="14sp"
                                 android:gravity="center"
                                 android:layout_marginTop="4dp"
-                                android:textColor="#FFFFFF"/> <!-- Black -->
+                                android:textColor="#FFFFFF"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -162,7 +169,7 @@
                                 android:textSize="14sp"
                                 android:gravity="center"
                                 android:layout_marginTop="4dp"
-                                android:textColor="#FFFFFF"/> <!-- Black -->
+                                android:textColor="#FFFFFF"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -171,7 +178,7 @@
                                 android:textSize="14sp"
                                 android:gravity="center"
                                 android:layout_marginTop="4dp"
-                                android:textColor="#FFFFFF"/> <!-- Black -->
+                                android:textColor="#FFFFFF"/>
                         </LinearLayout>
 
                     </LinearLayout>
@@ -197,9 +204,9 @@
                     android:textStyle="bold"
                     android:paddingBottom="8dp"
                     android:layout_marginTop="16dp"
-                    android:textColor="#72B944"/> <!-- Black -->
+                    android:textColor="#72B944"/>
 
-                <!-- Example of an Event Tile -->
+                <!-- Example Event Tile -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -224,10 +231,8 @@
                         android:text="Fundraiser"
                         android:textSize="16sp"
                         android:gravity="end"
-                        android:textColor="#000000"/> <!-- Black -->
+                        android:textColor="#000000"/>
                 </LinearLayout>
-
-                <!-- Additional event tiles can be added similarly -->
 
                 <!-- Insights Section -->
                 <LinearLayout
@@ -245,7 +250,7 @@
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:layout_marginBottom="8dp"
-                        android:textColor="#000000"/> <!-- Black -->
+                        android:textColor="#000000"/>
 
                     <Button
                         android:id="@+id/learnMoreButton"

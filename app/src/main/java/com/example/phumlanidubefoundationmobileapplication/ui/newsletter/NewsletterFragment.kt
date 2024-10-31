@@ -9,101 +9,65 @@ import com.example.phumlanidubefoundationmobileapplication.R
 import com.example.phumlanidubefoundationmobileapplication.databinding.FragmentNewsletterBinding
 import android.widget.TextView
 import android.view.MotionEvent
-import android.widget.Button
-import android.widget.LinearLayout
 import android.view.GestureDetector
+import androidx.fragment.app.viewModels
 import com.example.phumlanidubefoundationmobileapplication.BaseActivity
-import com.example.phumlanidubefoundationmobileapplication.databinding.FragmentSettingsBinding
+import androidx.media3.exoplayer.ExoPlayer
+import androidx.media3.ui.PlayerView
+import com.google.firebase.firestore.FirebaseFirestore
+
 
 
 class NewsletterFragment : Fragment() {
 
-    private lateinit var Bbinding: FragmentNewsletterBinding
-    //private val binding get() = _binding!!
-    private lateinit var textArray: Array<String>
-    private var currentTextIndex = 0
+    private lateinit var binding: FragmentNewsletterBinding
+    private val viewModel: NewsletterViewModel by viewModels()
+    private lateinit var playerView: PlayerView
+    private lateinit var player: ExoPlayer
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        Bbinding = FragmentNewsletterBinding.inflate(inflater, container, false)
-        // Access BaseActivity and apply font size changes if needed
-        val baseActivity = activity as? BaseActivity
-        baseActivity?.applyFontSize()  // Call the font size method from BaseActivity
+        binding = FragmentNewsletterBinding.inflate(inflater, container, false)
 
-        return Bbinding.root
+        // Initialize Media3 PlayerView and ExoPlayer
+        playerView = binding.playerView  // Access playerView from the binding
+        player = ExoPlayer.Builder(requireContext()).build()
+        playerView.player = player
+
+        // Access BaseActivity and apply font size changes if needed
+        (activity as? BaseActivity)?.applyFontSize()  // Call the font size method from BaseActivity
+
+        return binding.root
     }
 
-        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-            super.onViewCreated(view, savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-            // Horizontal text container
-            val horizontalTextContainer = Bbinding.horizontalTextContainer
-            val textView: TextView = Bbinding.eventDescription1
-            textArray = arrayOf(
-                "Phumulani Dude Foundation: August Highlights |\n•| Youth mentorship programs launched |\n•| Community clean-up events |\n| Exciting projects lined up for the future!",
-                "Phumulani Dude Foundation: September Highlights |\n•| New partnerships formed |\n•| Successful community events",
-                "Phumulani Dude Foundation: October Highlights |\n•| Upcoming projects |\n•| Volunteer opportunities available |"
-            )
-
-            // Setup GestureDetector
-            val gestureDetector =
-                GestureDetector(context, object : GestureDetector.SimpleOnGestureListener() {
-                    override fun onFling(
-                        e1: MotionEvent?,
-                        e2: MotionEvent,
-                        velocityX: Float,
-                        velocityY: Float
-                    ): Boolean {
-                        if (e1 != null) {
-                            if (e1.x - e2.x > 50) { // Swipe left
-                                nextText()
-                                return true
-                            } else if (e2.x - e1.x > 50) { // Swipe right
-                                previousText()
-                                return true
-                            }
-                        }
-                        return false
-                    }
-                })
-
-            // Set touch listener for the horizontal container
-            horizontalTextContainer.setOnTouchListener { _, event ->
-                gestureDetector.onTouchEvent(event)
-                true
-            }
-
-            // Handle Download Button Click
-            Bbinding.downloadButton.setOnClickListener {
-                // Handle download action
-            }
-
-            // Handle Learn More Button Click
-            Bbinding.learnMoreButton.setOnClickListener {
-                // Handle navigation to insights
-            }
-
-            // Set initial text
-            textView.text = textArray[currentTextIndex]
+        // Observe data from ViewModel
+        viewModel.categories.observe(viewLifecycleOwner) { categories ->
+            // Update your UI with categories
         }
 
-        private fun nextText() {
-            currentTextIndex = (currentTextIndex + 1) % textArray.size
-            Bbinding.eventDescription1.text = textArray[currentTextIndex]
+        viewModel.events.observe(viewLifecycleOwner) { events ->
+            // Update your UI with events
         }
 
-        private fun previousText() {
-            currentTextIndex = (currentTextIndex - 1 + textArray.size) % textArray.size
-            Bbinding.eventDescription1.text = textArray[currentTextIndex]
+        viewModel.announcements.observe(viewLifecycleOwner) { announcements ->
+            // Update your UI with announcements
         }
 
-//        override fun onDestroyView() {
-//            super.onDestroyView()
-//            Bbinding = null
-//
-//        }
+        // Fetch data
+        viewModel.fetchCategories()
+        viewModel.fetchEventsByCategory("August") // Example: Fetch events for August
+        viewModel.fetchAnnouncements()
+    }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        player.release()  // Release the player when done
+    }
 }
+
