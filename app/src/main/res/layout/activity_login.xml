@@ -56,7 +56,7 @@
                 android:id="@+id/emailPhoneInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/enter_your_email_or_phone_number"
+                android:hint="@string/enter_your_email"
                 android:textColorHint="@color/grey"
                 android:textColor="@color/black"
                 android:inputType="text"
@@ -104,17 +104,6 @@
                 android:backgroundTint="@android:color/transparent"
                 android:padding="12dp"
                 android:layout_gravity="center" />
-            <!-- Button to send verification code -->
-            <Button
-                android:id="@+id/sendCodeBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Send Verification Code to Phone number to reset password"
-                android:textColor="@color/peacock_blue"
-                android:backgroundTint="@android:color/transparent"
-                android:padding="12dp"
-                android:layout_gravity="center"/>
-
 
             <!-- Register Button -->
             <Button

@@ -87,7 +87,7 @@
                 android:id="@+id/emailPhoneInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/enter_your_email_or_phone_number"
+                android:hint="@string/enter_your_email"
                 android:textColorHint="@color/grey"
                 android:textColor="@color/black"
                 android:inputType="text"

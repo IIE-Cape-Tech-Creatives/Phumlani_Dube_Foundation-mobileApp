@@ -3,6 +3,7 @@ package com.example.phumlanidubefoundationmobileapplication
 import android.os.Bundle
 import android.widget.Toast
 import android.content.Intent
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.phumlanidubefoundationmobileapplication.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth

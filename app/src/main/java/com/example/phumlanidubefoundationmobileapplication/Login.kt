@@ -55,16 +55,16 @@ class Login : AppCompatActivity() {
 				Toast.makeText(this, "Please enter both email and password.", Toast.LENGTH_SHORT).show()
 			}
 		}
-
-		// Handle Send Code Button Click
-		binding.sendCodeBtn.setOnClickListener {
-			val phoneNumber = binding.emailPhoneInput.text.toString()
-			if (phoneNumber.isNotEmpty()) {
-				sendVerificationCode(phoneNumber)
-			} else {
-				Toast.makeText(this, "Please enter your phone number.", Toast.LENGTH_SHORT).show()
-			}
-		}
+		/*
+                // Handle Send Code Button Click
+                binding.sendCodeBtn.setOnClickListener {
+                    val phoneNumber = binding.emailPhoneInput.text.toString()
+                    if (phoneNumber.isNotEmpty()) {
+                        sendVerificationCode(phoneNumber)
+                    } else {
+                        Toast.makeText(this, "Please enter your phone number.", Toast.LENGTH_SHORT).show()
+                    }
+                }*/
 	}
 	// Function to log in user
 	private fun loginUser(email: String, password: String) {
@@ -97,31 +97,31 @@ class Login : AppCompatActivity() {
 			}
 	}
 
-	private fun sendVerificationCode(phoneNumber: String) {
-		val options = PhoneAuthOptions.newBuilder(firebaseAuth)
-			.setPhoneNumber(phoneNumber)
-			.setTimeout(60L, TimeUnit.SECONDS)
-			.setActivity(this)
-			.setCallbacks(object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-				override fun onVerificationCompleted(credential: PhoneAuthCredential) {
-					// Handle auto-retrieval or instant verification
-				}
+	/*	private fun sendVerificationCode(phoneNumber: String) {
+            val options = PhoneAuthOptions.newBuilder(firebaseAuth)
+                .setPhoneNumber(phoneNumber)
+                .setTimeout(60L, TimeUnit.SECONDS)
+                .setActivity(this)
+                .setCallbacks(object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+                    override fun onVerificationCompleted(credential: PhoneAuthCredential) {
+                        // Handle auto-retrieval or instant verification
+                    }
 
-				override fun onVerificationFailed(e: FirebaseException) {
-					Toast.makeText(this@Login, "Verification failed: ${e.message}", Toast.LENGTH_SHORT).show()
-				}
+                    override fun onVerificationFailed(e: FirebaseException) {
+                        Toast.makeText(this@Login, "Verification failed: ${e.message}", Toast.LENGTH_SHORT).show()
+                    }
 
-				override fun onCodeSent(verificationId: String, token: PhoneAuthProvider.ForceResendingToken) {
-					storedVerificationId = verificationId
-					resendToken = token
-					// Show verification input fields when the code is sent
-					binding.verificationCodeEditText.visibility = android.view.View.VISIBLE
-					binding.verifyCodeBtn.visibility = android.view.View.VISIBLE
-				}
-			})
-			.build()
+                    override fun onCodeSent(verificationId: String, token: PhoneAuthProvider.ForceResendingToken) {
+                        storedVerificationId = verificationId
+                        resendToken = token
+                        // Show verification input fields when the code is sent
+                        binding.verificationCodeEditText.visibility = android.view.View.VISIBLE
+                        binding.verifyCodeBtn.visibility = android.view.View.VISIBLE
+                    }
+                })
+                .build()
 
-		PhoneAuthProvider.verifyPhoneNumber(options)
+            PhoneAuthProvider.verifyPhoneNumber(options)
 
-	}
+        }*/
 }
